@@ -22,17 +22,8 @@ You will find your image in the output folder.
 (If you want to conntrol the build by the commandline type './build.sh -h' for further information)
 
 # Adding custom packages to install
-    -If you want to add packages to install, append it to config/app-packages/pkg.txt
+    -If you want to add packages to install, append it to pkg.txt
      instead of modifying the Dockerfile
-
-# Other Desktops be added soon...
----------------------------------------------------
- # Contact to the developer: byte4rr4y@gmail.com #
----------------------------------------------------
-
-
-# Required Host system:
-  - Linux arm64 
 
 # What you can build?
 DEBIAN:
