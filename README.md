@@ -8,10 +8,10 @@
 # Installation:
 ----------------------
     git clone https://github.com/byte4RR4Y/rpi5-image-builder
-    cd rpi-image-builder
+    cd debian-rpi5-self
     chmod +x ./*
     chmod +x scripts/*
-    sudo ./install.sh
+    Using package manager install docker docker-buildx docker-compose and building esentials
 ----------------------
 
 # To build an SD-Card image follow the instructions after:
@@ -32,18 +32,11 @@ You will find your image in the output folder.
 
 
 # Required Host system:
-  - Debian/amd64 (bullseye, bookworm, MX 21 and MX23 are tested)
+  - Linux arm64 
 
 # What you can build?
 DEBIAN:
-  - Testing
-  - Experimental
-  - Trixie
-  - Sid
   - Bookworm
-  - Bullseye
 
-Kernel from 3.16.x - 6.8.x
 
-Currently supported desktops:
   - XFCE (Not yet tested, report any issues)
