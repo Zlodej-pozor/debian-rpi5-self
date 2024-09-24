@@ -8,12 +8,12 @@ CPUS=$(($(nproc)))
 git clone --depth=1 --branch $BRANCH https://github.com/raspberrypi/linux
 cd linux
 
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcm2712_defconfig
+make bcm2712_defconfig
 
 KERNELDIR="KERNEL-${BRANCH}"
 mkdir -p "${KERNELDIR}"
 
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcm2712_defconfig
+make bcm2712_defconfig
 sed -i "s/^CONFIG_LOCALVERSION=.*$/CONFIG_LOCALVERSION="-byte4rr4y"/" ".config"
 BUILD="$(sed -n 's|^.*\s\+\(\S\+\.\S\+\.\S\+\)\s\+Kernel Configuration$|\1|p' .config)"
 
