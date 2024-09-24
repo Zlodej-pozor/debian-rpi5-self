@@ -2,21 +2,11 @@
 
 TIMESTAMP=$(date +%s)
 
-usage() {
-    echo "Usage: $0 [-h|--help] [-s|--suite SUITE] [-k|--kernelbranch KERNELBRANCH] [-d|--desktop DESKTOP] [-a|--additional ADDITIONAL] [-u|--username USERNAME] [-p|--password PASSWORD] [-b]"
-    echo "-------------------------------------------------------------------------------------------------"
-    echo "Options:"
-    echo "  -h, --help                      Show this help message and exit"
-    echo "  -s, --suite SUITE               Choose the Debian suite (e.g., testing, experimental, trixie)"
-    echo "  -k, --kernelbranch KERNELBRANCH Choose the Kernel branch (e.g., rpi-6.1.y, rpi-6.2.y)"
-    echo "  -d, --desktop DESKTOP           Choose the desktop environment (e.g., xfce, none)"
-    echo "  -a, --additional ADDITIONAL     Choose whether to install additional software (yes/no)"
-    echo "  -u, --username USERNAME         Enter the username for the sudo user"
-    echo "  -p, --password PASSWORD         Enter the password for the sudo user"
-    echo "  -b                              Build the image with the specified configuration without asking"
-    echo "-------------------------------------------------------------------------------------------------"
-    exit 1
-}
+SUITE="bookworm"
+BRANCH="stable"
+DESKTOP="xfce"
+USERNAME="Zlodej"
+PASSWORD="ChangeMe"
 
 # Check if running with sudo
 if [ "$UID" -ne 0 ]; then
@@ -39,11 +29,7 @@ rm config/rootfs_size.txt
 
 docker rmi rpi:latest
 
-SUITE="bookworm"
-BRANCH="stable"
-DESKTOP="xfce"
-USERNAME="Zlodej"
-PASSWORD="ChangeMe"
+
 echo ""
 read -p "Enter Password: " choice
 
